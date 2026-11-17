@@ -1,0 +1,9 @@
+# Multi-Agent Enterprise AI Service Desk
+# Dependencies for Units III, IV & V Assignment
+streamlit>=1.35.0
+pydantic>=2.7.0
+reportlab>=4.0.0
+python-docx>=1.1.0
+matplotlib>=3.8.0
+playwright>=1.40.0
+

@@ -1,0 +1,79 @@
+[
+  {
+    "user_id": "EMP-1042",
+    "name": "Sarah Jenkins",
+    "email": "sarah.jenkins@enterprise.internal",
+    "role": "EMPLOYEE",
+    "department": "Financial Analytics",
+    "assigned_device": "Dell Latitude 7420 (Asset #DL-9941)",
+    "os_version": "Windows 11 Enterprise (Build 23H2)",
+    "ip_subnet": "10.14.20.0/24 (Finance-VLAN)",
+    "allowed_tools": [
+      "search_it_knowledge_base",
+      "search_existing_tickets",
+      "create_support_ticket",
+      "check_system_status",
+      "retrieve_troubleshooting_info"
+    ]
+  },
+  {
+    "user_id": "EMP-2089",
+    "name": "David Chen",
+    "email": "david.chen@enterprise.internal",
+    "role": "EMPLOYEE",
+    "department": "Human Resources",
+    "assigned_device": "Lenovo ThinkPad X1 Carbon (Asset #LP-4412)",
+    "os_version": "Windows 11 Enterprise (Build 23H2)",
+    "ip_subnet": "10.14.30.0/24 (HR-VLAN)",
+    "allowed_tools": [
+      "search_it_knowledge_base",
+      "search_existing_tickets",
+      "create_support_ticket",
+      "check_system_status",
+      "retrieve_troubleshooting_info"
+    ]
+  },
+  {
+    "user_id": "IT-5501",
+    "name": "Marcus Vance",
+    "email": "marcus.vance@enterprise.internal",
+    "role": "IT_SPECIALIST",
+    "department": "IT Operations & Infrastructure",
+    "assigned_device": "Dell Precision 5570 (Asset #DP-8100)",
+    "os_version": "Windows 11 Enterprise (Build 24H2)",
+    "ip_subnet": "10.14.10.0/24 (IT-Mgmt)",
+    "allowed_tools": [
+      "search_it_knowledge_base",
+      "search_existing_tickets",
+      "create_support_ticket",
+      "check_system_status",
+      "retrieve_troubleshooting_info",
+      "escalate_for_human_approval",
+      "reset_network_adapter_remote",
+      "reissue_wifi_cert"
+    ]
+  },
+  {
+    "user_id": "ADMIN-9001",
+    "name": "Elena Rostova",
+    "email": "elena.rostova@enterprise.internal",
+    "role": "SYS_ADMIN",
+    "department": "Enterprise Security & Infrastructure",
+    "assigned_device": "ThinkPad P16 Gen 2 (Asset #SEC-001)",
+    "os_version": "Red Hat Enterprise Linux 9 / Win 11 Dual",
+    "ip_subnet": "10.14.1.0/24 (Core-Infra)",
+    "allowed_tools": [
+      "search_it_knowledge_base",
+      "search_existing_tickets",
+      "create_support_ticket",
+      "check_system_status",
+      "retrieve_troubleshooting_info",
+      "escalate_for_human_approval",
+      "reset_network_adapter_remote",
+      "reissue_wifi_cert",
+      "modify_user_role",
+      "restart_enterprise_service"
+    ]
+  }
+]
+

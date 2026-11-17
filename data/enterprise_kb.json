@@ -1,0 +1,66 @@
+[
+  {
+    "id": "KB-NET-01",
+    "category": "Network Connectivity",
+    "title": "Corporate Wi-Fi (CorpNet-Secure) 802.1x Connection & Certificate Troubleshooting",
+    "keywords": ["wifi", "wi-fi", "wireless", "corpnet", "certificate", "802.1x", "radius", "network", "disconnect"],
+    "content": "For Corporate 802.1x Wi-Fi connection failures: 1. Verify your machine certificate is valid under certmgr.msc -> Personal -> Certificates. 2. Ensure CorpNet-Secure network profile is set to WPA3-Enterprise / PEAP-MSCHAPv2. 3. If authentication loops, toggle Airplane mode for 10 seconds or clear stored wireless credentials via `netsh wlan delete profile name='CorpNet-Secure'`. 4. If connection drops persist, verify that IP configuration shows a valid 10.14.x.x lease rather than 169.254.x.x (APIPA). 5. Re-run Company Portal sync to refresh device identity tokens.",
+    "verified": true,
+    "last_reviewed": "2026-09-15"
+  },
+  {
+    "id": "KB-NET-02",
+    "category": "Network Connectivity",
+    "title": "Cisco AnyConnect Corporate VPN Diagnostics and Split-Tunneling Guidelines",
+    "keywords": ["vpn", "anyconnect", "remote", "tunnel", "cisco", "gateway", "connection error", "vpn failed"],
+    "content": "When connecting through Cisco AnyConnect Secure Mobility Client: 1. Confirm primary gateway 'vpn.enterprise.internal' is reachable. If high latency occurs on Node-US-East, switch manually to secondary gateway 'vpn-backup.enterprise.internal'. 2. AnyConnect error 'Untrusted Server Certificate': execute Corporate Root CA renewal via Company Portal. 3. Split-tunneling policy dictates internal subnets (10.0.0.0/8) traverse the tunnel while generic public web traffic remains local. 4. If the client gets stuck on 'Establishing VPN session', restart the Cisco AnyConnect Secure Mobility Agent service in Windows Services.",
+    "verified": true,
+    "last_reviewed": "2026-10-01"
+  },
+  {
+    "id": "KB-AUTH-03",
+    "category": "Authentication & Access",
+    "title": "Single Sign-On (SSO) and Multi-Factor Authentication (MFA) Self-Service Reset",
+    "keywords": ["password", "reset", "sso", "mfa", "authenticator", "locked out", "login", "credentials"],
+    "content": "Enterprise password and MFA policy: 1. Employees can initiate self-service password reset at identity.enterprise.internal/reset using an enrolled authenticator app or hardware FIDO2 key. 2. Passwords must be at least 16 characters with uppercase, lowercase, numbers, and symbols. Passwords cannot match the last 10 passwords. 3. Account lockout occurs automatically after 5 consecutive failed attempts; lockout duration is 30 minutes unless unlocked by IT Service Desk. 4. Service Desk agents cannot provide plaintext passwords over chat; all automated resets must trigger an encrypted one-time SMS/Authenticator verification link.",
+    "verified": true,
+    "last_reviewed": "2026-10-12"
+  },
+  {
+    "id": "KB-SYS-04",
+    "category": "Hardware & OS",
+    "title": "BitLocker Drive Encryption Recovery and Hardware TPM Diagnostics",
+    "keywords": ["bitlocker", "recovery key", "blue screen", "tpm", "encryption", "boot", "drive locked"],
+    "content": "If a corporate laptop boots into BitLocker Recovery screen: 1. Do not enter random numerical keys; 3 invalid attempts trigger a 2-hour firmware lockout. 2. Employees can retrieve their BitLocker Key ID from the self-service Azure AD portal (myaccount.microsoft.com/devices) using a secondary mobile device. 3. If the recovery key is unavailable, an IT Specialist must verify the employee's government-issued badge ID and cross-reference device serial number in Microsoft Intune before releasing the 48-digit recovery key. 4. If TPM 2.0 is disabled in UEFI, restart machine, enter BIOS (F12/F2) and verify Security -> Intel PTT / TPM is Enabled.",
+    "verified": true,
+    "last_reviewed": "2026-08-20"
+  },
+  {
+    "id": "KB-SOFT-05",
+    "category": "Software & Applications",
+    "title": "Enterprise Approved Software Whitelist and Self-Service Portal Installation",
+    "keywords": ["software", "install", "download", "portal", "admin rights", "privilege", "whitelist", "application"],
+    "content": "Software deployment policy: 1. All corporate laptops are managed under Microsoft Intune and restrict local Administrator execution. 2. Pre-approved software (e.g., VS Code, Power BI, Slack, Zoom, Python Anaconda corporate edition) can be installed directly without elevated privileges via the Company Portal application. 3. Unapproved software, torrent clients, unauthorized remote access tools (AnyDesk, TeamViewer), or non-vetted developer tools require an Architecture Review Board ticket and department head sign-off. 4. Automated agent execution of software installation must verify cryptographic hash and software whitelist repository before deployment.",
+    "verified": true,
+    "last_reviewed": "2026-09-28"
+  },
+  {
+    "id": "KB-MAIL-06",
+    "category": "Productivity Tools",
+    "title": "Microsoft Outlook Mailbox Synchronization and OST Corrupt Index Fixes",
+    "keywords": ["outlook", "email", "mailbox", "sync", "ost", "exchange", "calendar", "mail not sending"],
+    "content": "When Outlook fails to sync or search results appear missing: 1. Check O365 Service Status in the portal. 2. Toggle Outlook Work Offline -> Work Online. 3. To rebuild a damaged search catalog: Go to Windows Settings -> Indexing Options -> Advanced -> Rebuild Index. 4. For corrupted OST local cache files: Close Outlook, navigate to %LOCALAPPDATA%\\Microsoft\\Outlook, rename the *.ost file to *.ost.bak, and reopen Outlook to re-download mailbox data from Exchange Online.",
+    "verified": true,
+    "last_reviewed": "2026-07-14"
+  },
+  {
+    "id": "KB-POL-07",
+    "category": "IT Policy & Governance",
+    "title": "Corporate Data Privacy, Storage of PII, and Acceptable Use Policy",
+    "keywords": ["privacy", "policy", "pii", "gdpr", "retention", "security", "confidential", "compliance"],
+    "content": "Enterprise data governance policy (POL-IT-09): 1. All automated AI systems and Service Desk tools must adhere to data minimization: employee passwords, government IDs, salary records, and private customer information must never be cached in persistent LLM memory or agent scratchpads. 2. Long-term memory storage is strictly limited to authorized device serials, work location preferences, and historical IT support ticket summaries. 3. Employees have the right to request full erasure ('Right to be Forgotten') of their AI interaction history through the IT Privacy Portal. 4. Any attempt to query another employee's records without designated Security role triggers an automated incident alert.",
+    "verified": true,
+    "last_reviewed": "2026-10-18"
+  }
+]
+
